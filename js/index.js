@@ -50,3 +50,15 @@ function introEscUp(event){
 
 document.addEventListener('keyup', introEscUp)
 
+//----------------------------------------------------------------------------------------
+function zoom(event){
+    event.preventDefault();
+    scale += event.deltaY * -0.01;
+    scale = Math.min(Math.max(.8, scale), 1.2);
+
+    introImg.style.transform = `scale(${scale})`
+}
+
+let scale = 1;
+
+introImg.addEventListener('wheel',zoom)
