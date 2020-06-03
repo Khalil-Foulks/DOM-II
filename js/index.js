@@ -5,6 +5,7 @@ const introImg = document.querySelector('.intro img');
 const introH2 = document.querySelector('.intro h2');
 const introP = document.querySelector('.intro p');
 const intro = document.querySelector('.intro');
+const button = document.querySelectorAll('.btn');
 //---------------------------------------------------------------------------------------
 
 
@@ -86,6 +87,11 @@ introImg.addEventListener('wheel',zoom)
 
 //----------------------------------------------------------------------------------------
 
-window.addEventListener('load', function(){
-    window.prompt('What is the password?');asdfsaf
+window.addEventListener('load', event =>{
+    window.prompt('What is the password?');
     });
+
+document.addEventListener('copy', event =>{
+    alert(`I Caught You Copying!`)
+})
+
