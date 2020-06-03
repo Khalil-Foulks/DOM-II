@@ -1,8 +1,10 @@
 // Your code goes here
+const nav = document.querySelector('.nav-container');
 const navAnchor = document.querySelectorAll('.nav a');
 const introImg = document.querySelector('.intro img');
 const introH2 = document.querySelector('.intro h2');
 const introP = document.querySelector('.intro p');
+const intro = document.querySelector('.intro');
 //---------------------------------------------------------------------------------------
 
 
@@ -11,13 +13,32 @@ navAnchor.forEach(item =>{
         event.target.style.color = 'green';
     }) 
 })
+
 //---------------------------------------------------------------------------------------
+navAnchor[0].addEventListener('dblclick', (event) =>{
+        event.stopPropagation();
+        event.preventDefault();
+        event.target.style.color = 'blue';
+        navAnchor[0].setAttribute('href', 'https://google.com');
+})
+
+
+//--------------------------------------------------------------------------------------
+
+function navDouble(event){
+    event.target.style.backgroundColor = 'gold';
+}
+nav.addEventListener('dblclick',navDouble)
+
+
+//--------------------------------------------------------------------------------------
 
 function mouseEnterP(event){
     event.target.style.backgroundColor = 'red';
     event.target.style.border = '2px solid black';
     event.target.style.color = 'white';
     event.target.style.textAlign = 'center';
+    event.stopPropagation();
 }
 
 introP.addEventListener('mouseenter', mouseEnterP)
@@ -62,3 +83,9 @@ function zoom(event){
 let scale = 1;
 
 introImg.addEventListener('wheel',zoom)
+
+//----------------------------------------------------------------------------------------
+
+window.addEventListener('load', function(){
+    window.prompt('What is the password?');asdfsaf
+    });
